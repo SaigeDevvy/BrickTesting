@@ -1,93 +1,148 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="en">
 
 <head>
   <title>Tuff Untested</title>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <meta charset="utf-8" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
   <link type="text/css" rel="stylesheet" href="files.css" />
 </head>
 
 <body>
-  <div class="window">
-    <header class="title-bar">
-      <div class="title">Tuff Untested Builds</div>
-      <div class="buttons">
-        <button class="btn-min" aria-label="minimize">─</button>
-        <button class="btn-max" aria-label="maximize">□</button>
-        <button class="btn-close" aria-label="close">✕</button>
-      </div>
+  <div class="container">
+    <header class="header">
+      <h1 class="logo">Tuff Untested</h1>
+      <nav class="nav">
+        <button class="nav-btn active" data-section="latest">Latest</button>
+        <button class="nav-btn" data-section="archive">Archive</button>
+        <button class="nav-btn" data-section="support">Support</button>
+      </nav>
     </header>
 
-    <nav class="menu-bar" aria-label="Main menu">
-      <a>File</a>
-      <a>Edit</a>
-      <a>View</a>
-      <a>Help</a>
-    </nav>
-
-    <main class="content">
-      <section class="intro">
-        <h1>Tuff Client Untested Builds</h1>
-        <p class="lead">Experimental and work-in-progress builds. Use at your own risk.</p>
-        <div class="quick-links">
-          <a class="primary" href="https://github.com/TuffNetwork/TuffX-Plugin/releases/download/1.2.0/TuffX.jar"
-            download>Download Y0 Plugin 1.2.0</a>
-          <a href="https://support.google.com/accounts/answer/32050?hl=en&co=GENIE.Platform%3DDesktop">Errors? Try this
-            first!</a>
+    <main>
+      <section id="latest" class="section active">
+        <div class="section-header">
+          <h2>Latest Build</h2>
+          <span class="badge">1.1UT12</span>
         </div>
-      </section>
+        
+        <div class="card">
+          <h3>Play Online</h3>
+          <div class="link-group">
+            <a href="files/1_1UT12/WASM/" class="btn btn-primary">WASM Version</a>
+            <a href="files/1_1UT12/JS/" class="btn btn-secondary">JS Version</a>
+          </div>
+        </div>
 
-      <section class="builds">
-        <h2>Latest Build</h2>
-        <ul>
-          <li>Play: <a href="files/1_1UT12/WASM/">1.1UT12 (WASM)</a> | <a href="files/1_1UT12/JS/">1.1UT12 (JS)</a></li>
-          <li>Download: <a href="files/1_1UT12/WASM/Tuff_Client_Offline_WASM.html" download>1.1UT12 WASM OFFLINE</a> |
-            <a href="files/1_1UT12/JS/Tuff_Client_JS.html" download>1.1UT12 JS OFFLINE</a></li>
-            <li>Latest Release Builds: <a href="https://github.com/TuffNetwork/Tuff-Client-Builds/releases/tag/1.1UT12">Go</a></li>
+        <div class="card">
+          <h3>Download Offline</h3>
+          <div class="link-group">
+            <a href="files/1_1UT12/WASM/Tuff_Client_Offline_WASM.html" download class="btn btn-secondary">WASM Offline</a>
+            <a href="files/1_1UT12/JS/Tuff_Client_JS.html" download class="btn btn-secondary">JS Offline</a>
+          </div>
+        </div>
 
-          </ul>
+        <div class="card">
+          <h3>Quick Links</h3>
+          <div class="link-group">
+            <a href="https://github.com/TuffNetwork/TuffX-Plugin/releases/download/1.2.0/TuffX.jar" download class="btn btn-primary">Download Y0 Plugin 1.2.0</a>
+            <a href="https://github.com/TuffNetwork/Tuff-Client-Builds/releases/tag/1.1UT12" class="btn btn-secondary">GitHub Releases</a>
+          </div>
+        </div>
 
-
-        <section class="support">
-          <h2>🛠 Support</h2>
-          <ul>
-            <li><a href="https://discord.com/invite/7UnXG6bE3b">Report Bugs on Discord</a></li>
-            <li><a href="https://github.com/TuffNetwork/BrickTesting">Host Your Own</a></li>
-          </ul>
-        </section>
-
-        <section class="archive">
-          <h2>Archived Builds</h2>
-          <ul>
-            <li><a href="files/1_1UT11/WASM/">1.1UT11 (WASM)</a></li>
-            <li><a href="files/1_1UD10/WASM/">1.1UD10 (WASM)</a></li>
-            <li><a href="files/1_1UT9/WASM/">1.1UT9 (WASM)</a></li>
-            <li><a href="files/1_1UT8/WASM/">1.1UT8 (WASM)</a></li>
-            <li><a href="files/1_1UT7/WASM/">1.1UT7 (WASM)</a></li>
-            <li><a href="files/1_1UT6/WASM/">1.1UT6 (WASM)</a></li>
-            <li><a href="files/1_1UT6/JS/">1.1UT6 (JS)</a></li>
-            <li><a href="files/1_1UT5/WASM/">1.1UT5 (WASM)</a></li>
-            <li><a href="files/1_1UT5/JS/">1.1UT5 (JS)</a></li>
-          </ul>
-        </section>
-
-        <aside class="notes">
+        <div class="card notes">
           <h3>Release Notes</h3>
-          <p><strong>Latest Version:</strong> 1.1UT12 — Published on: Dec 30, 2025</p>
+          <p class="version-info">Version 1.1UT12 — Dec 30, 2025</p>
           <ul>
             <li>Recording Studio</li>
             <li>Fixed crash for WebGL 1.0</li>
-
           </ul>
-        </aside>
-    </main>
+        </div>
+      </section>
 
-    <footer class="status-bar">Status: Active</footer>
+      <section id="archive" class="section">
+        <div class="section-header">
+          <h2>Archived Builds</h2>
+        </div>
+        
+        <div class="card">
+          <div class="archive-list">
+            <a href="files/1_1UT11/WASM/" class="archive-item">
+              <span class="version">1.1UT11</span>
+              <span class="type">WASM</span>
+            </a>
+            <a href="files/1_1UD10/WASM/" class="archive-item">
+              <span class="version">1.1UD10</span>
+              <span class="type">WASM</span>
+            </a>
+            <a href="files/1_1UT9/WASM/" class="archive-item">
+              <span class="version">1.1UT9</span>
+              <span class="type">WASM</span>
+            </a>
+            <a href="files/1_1UT8/WASM/" class="archive-item">
+              <span class="version">1.1UT8</span>
+              <span class="type">WASM</span>
+            </a>
+            <a href="files/1_1UT7/WASM/" class="archive-item">
+              <span class="version">1.1UT7</span>
+              <span class="type">WASM</span>
+            </a>
+            <a href="files/1_1UT6/WASM/" class="archive-item">
+              <span class="version">1.1UT6</span>
+              <span class="type">WASM</span>
+            </a>
+            <a href="files/1_1UT6/JS/" class="archive-item">
+              <span class="version">1.1UT6</span>
+              <span class="type">JS</span>
+            </a>
+            <a href="files/1_1UT5/WASM/" class="archive-item">
+              <span class="version">1.1UT5</span>
+              <span class="type">WASM</span>
+            </a>
+            <a href="files/1_1UT5/JS/" class="archive-item">
+              <span class="version">1.1UT5</span>
+              <span class="type">JS</span>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <section id="support" class="section">
+        <div class="section-header">
+          <h2>Support</h2>
+        </div>
+        
+        <div class="card">
+          <h3>Having Issues?</h3>
+          <p>If you're experiencing errors, try clearing your browser cookies first.</p>
+          <a href="https://support.google.com/accounts/answer/32050?hl=en&co=GENIE.Platform%3DDesktop" class="btn btn-secondary">Clear Cookies Guide</a>
+        </div>
+
+        <div class="card">
+          <h3>Report Bugs</h3>
+          <p>Found a bug? Let us know on Discord.</p>
+          <a href="https://discord.com/invite/7UnXG6bE3b" class="btn btn-secondary">Join Discord</a>
+        </div>
+
+        <div class="card">
+          <h3>Self-Hosting</h3>
+          <p>Want to host your own instance?</p>
+          <a href="https://github.com/TuffNetwork/BrickTesting" class="btn btn-secondary">View on GitHub</a>
+        </div>
+      </section>
+    </main>
   </div>
+
+  <script>
+    document.querySelectorAll('.nav-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('active'));
+        document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+        btn.classList.add('active');
+        document.getElementById(btn.dataset.section).classList.add('active');
+      });
+    });
+  </script>
 </body>
 
 </html>

@@ -1,84 +1,205 @@
-body {
-    background: #008080;
-    font-family: "MS Sans Serif", Tahoma, sans-serif;
+* {
+    box-sizing: border-box;
     margin: 0;
-    padding: 20px;
+    padding: 0;
 }
 
-.window {
-    width: 750px;
-    background: #C0C0C0;
-    border: 2px solid #000;
-    box-shadow: 2px 2px #404040;
-    margin: auto;
+body {
+    background: #0a0a0a;
+    font-family: 'Inter', -apple-system, sans-serif;
+    color: #ccc;
+    line-height: 1.5;
+    min-height: 100vh;
+    padding: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.title-bar {
-    background: #000080;
-    color: white;
-    padding: 4px 6px;
-    font-weight: bold;
+.container {
+    max-width: 600px;
+    width: 100%;
+    border: 2px solid #444;
+    border-radius: 16px;
+    padding: 28px;
+    background: #111;
+}
+
+.header {
+    margin-bottom: 20px;
+    border-bottom: 1px solid #333;
+    padding-bottom: 16px;
+}
+
+.logo {
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 12px;
+    color: #fff;
+}
+
+.nav {
+    display: flex;
+    gap: 6px;
+}
+
+.nav-btn {
+    background: none;
+    border: none;
+    padding: 6px 12px;
+    font-size: 13px;
+    font-family: inherit;
+    cursor: pointer;
+    color: #888;
+    font-weight: 500;
+    border-radius: 6px;
+}
+
+.nav-btn:hover {
+    background: #222;
+    color: #fff;
+}
+
+.nav-btn.active {
+    background: #fff;
+    color: #111;
+}
+
+.section {
+    display: none;
+}
+
+.section.active {
+    display: block;
+}
+
+.section-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 14px;
+}
+
+.section-header h2 {
+    font-size: 16px;
+    font-weight: 600;
+    color: #fff;
+}
+
+.badge {
+    background: #fff;
+    color: #111;
+    padding: 3px 8px;
+    border-radius: 4px;
+    font-size: 11px;
+}
+
+.card {
+    background: #1a1a1a;
+    border: 1px solid #333;
+    border-radius: 8px;
+    padding: 14px;
+    margin-bottom: 10px;
+}
+
+.card h3 {
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: #fff;
+}
+
+.card p {
+    color: #888;
+    font-size: 13px;
+    margin-bottom: 10px;
+}
+
+.card ul {
+    list-style: none;
+}
+
+.card li {
+    padding: 4px 0;
+    font-size: 13px;
+    color: #ccc;
+    border-bottom: 1px solid #222;
+}
+
+.card li:last-child {
+    border-bottom: none;
+}
+
+.version-info {
+    font-size: 12px;
+    color: #666;
+}
+
+.link-group {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.btn {
+    display: inline-block;
+    padding: 8px 14px;
+    font-size: 13px;
+    font-weight: 500;
+    text-decoration: none;
+    border-radius: 6px;
+}
+
+.btn-primary {
+    background: #fff;
+    color: #111;
+}
+
+.btn-primary:hover {
+    background: #ddd;
+}
+
+.btn-secondary {
+    background: #222;
+    color: #ccc;
+    border: 1px solid #333;
+}
+
+.btn-secondary:hover {
+    background: #2a2a2a;
+}
+
+.archive-list {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.archive-item {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding: 10px 12px;
+    background: #222;
+    border-radius: 6px;
+    text-decoration: none;
+    color: #ccc;
 }
 
-.title-bar .buttons span {
-    display: inline-block;
-    width: 16px;
-    height: 14px;
-    border: 1px solid white;
-    text-align: center;
-    line-height: 12px;
-    margin-left: 4px;
-    background: #C0C0C0;
-    color: black;
-    cursor: pointer;
-    font-weight: bold;
+.archive-item:hover {
+    background: #2a2a2a;
 }
 
-.menu-bar {
-    background: #C0C0C0;
-    padding: 3px 6px;
-    border-bottom: 2px solid #808080;
-    font-size: 14px;
+.archive-item .version {
+    font-weight: 500;
+    color: #fff;
+    font-size: 13px;
 }
 
-.menu-bar span {
-    margin-right: 10px;
-    cursor: pointer;
-}
-
-.content {
-    padding: 15px;
-    font-size: 14px;
-}
-
-hr {
-    border: none;
-    border-top: 2px solid #808080;
-    margin: 10px 0;
-}
-
-.button {
-    padding: 4px 10px;
-    background: #C0C0C0;
-    border: 2px solid #808080;
-    display: inline-block;
-    cursor: pointer;
-    box-shadow: inset -1px -1px 0 0 #ffffff, inset 1px 1px 0 0 #404040;
-    margin: 5px 0;
-}
-
-a {
-    color: #000080;
-    text-decoration: underline;
-}
-
-.status-bar {
-    background: #C0C0C0;
-    padding: 4px;
-    border-top: 2px solid #808080;
-    font-size: 12px;
-    color: #404040;
+.archive-item .type {
+    font-size: 11px;
+    color: #888;
+    background: #333;
+    padding: 2px 6px;
+    border-radius: 4px;
 }
