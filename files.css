@@ -1,41 +1,66 @@
-* {
+:root {
+    --bg: #0b0b0b;
+    --surface: #121212;
+    --surface-2: #1a1a1a;
+    --border: #2a2a2a;
+    --border-strong: #3a3a3a;
+
+    --text: #d0d0d0;
+    --text-muted: #8a8a8a;
+    --text-dim: #666;
+    --text-invert: #111;
+
+    --accent: #ffffff;
+
+    --radius-sm: 6px;
+    --radius-md: 10px;
+    --radius-lg: 16px;
+
+    --transition: 0.2s ease;
+}
+
+*,
+*::before,
+*::after {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
 
 body {
-    background: #0a0a0a;
-    font-family: 'Inter', -apple-system, sans-serif;
-    color: #ccc;
-    line-height: 1.5;
     min-height: 100vh;
-    padding: 40px;
+    background: radial-gradient(1200px 600px at top, #111 0%, var(--bg) 60%);
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    color: var(--text);
+    line-height: 1.6;
     display: flex;
     align-items: center;
     justify-content: center;
+    padding: 40px;
 }
 
 .container {
-    max-width: 600px;
     width: 100%;
-    border: 2px solid #444;
-    border-radius: 16px;
+    max-width: 620px;
+    background: var(--surface);
+    border: 1px solid var(--border-strong);
+    border-radius: var(--radius-lg);
     padding: 28px;
-    background: #111;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
 }
 
 .header {
-    margin-bottom: 20px;
-    border-bottom: 1px solid #333;
+    margin-bottom: 22px;
     padding-bottom: 16px;
+    border-bottom: 1px solid var(--border);
 }
 
 .logo {
     font-size: 20px;
     font-weight: 600;
+    color: var(--accent);
     margin-bottom: 12px;
-    color: #fff;
+    letter-spacing: -0.01em;
 }
 
 .nav {
@@ -44,25 +69,27 @@ body {
 }
 
 .nav-btn {
-    background: none;
-    border: none;
+    appearance: none;
+    background: transparent;
+    border: 1px solid transparent;
     padding: 6px 12px;
     font-size: 13px;
-    font-family: inherit;
-    cursor: pointer;
-    color: #888;
     font-weight: 500;
-    border-radius: 6px;
+    color: var(--text-muted);
+    border-radius: var(--radius-sm);
+    cursor: pointer;
+    transition: background var(--transition), color var(--transition), border var(--transition);
 }
 
 .nav-btn:hover {
-    background: #222;
-    color: #fff;
+    background: var(--surface-2);
+    color: var(--accent);
 }
 
 .nav-btn.active {
-    background: #fff;
-    color: #111;
+    background: var(--accent);
+    color: var(--text-invert);
+    border-color: var(--accent);
 }
 
 .section {
@@ -81,23 +108,24 @@ body {
 }
 
 .section-header h2 {
-    font-size: 16px;
+    font-size: 15px;
     font-weight: 600;
-    color: #fff;
+    color: var(--accent);
 }
 
 .badge {
-    background: #fff;
-    color: #111;
-    padding: 3px 8px;
-    border-radius: 4px;
     font-size: 11px;
+    font-weight: 500;
+    padding: 3px 8px;
+    background: var(--accent);
+    color: var(--text-invert);
+    border-radius: 999px;
 }
 
 .card {
-    background: #1a1a1a;
-    border: 1px solid #333;
-    border-radius: 8px;
+    background: var(--surface-2);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
     padding: 14px;
     margin-bottom: 10px;
 }
@@ -105,13 +133,13 @@ body {
 .card h3 {
     font-size: 14px;
     font-weight: 600;
-    margin-bottom: 8px;
-    color: #fff;
+    color: var(--accent);
+    margin-bottom: 6px;
 }
 
 .card p {
-    color: #888;
     font-size: 13px;
+    color: var(--text-muted);
     margin-bottom: 10px;
 }
 
@@ -120,10 +148,10 @@ body {
 }
 
 .card li {
-    padding: 4px 0;
+    padding: 6px 0;
     font-size: 13px;
-    color: #ccc;
-    border-bottom: 1px solid #222;
+    color: var(--text);
+    border-bottom: 1px solid var(--border);
 }
 
 .card li:last-child {
@@ -132,7 +160,7 @@ body {
 
 .version-info {
     font-size: 12px;
-    color: #666;
+    color: var(--text-dim);
 }
 
 .link-group {
@@ -142,31 +170,34 @@ body {
 }
 
 .btn {
-    display: inline-block;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
     padding: 8px 14px;
     font-size: 13px;
     font-weight: 500;
     text-decoration: none;
-    border-radius: 6px;
+    border-radius: var(--radius-sm);
+    transition: background var(--transition), color var(--transition), border var(--transition);
 }
 
 .btn-primary {
-    background: #fff;
-    color: #111;
+    background: var(--accent);
+    color: var(--text-invert);
 }
 
 .btn-primary:hover {
-    background: #ddd;
+    background: #e5e5e5;
 }
 
 .btn-secondary {
-    background: #222;
-    color: #ccc;
-    border: 1px solid #333;
+    background: var(--surface-2);
+    color: var(--text);
+    border: 1px solid var(--border);
 }
 
 .btn-secondary:hover {
-    background: #2a2a2a;
+    background: #222;
 }
 
 .archive-list {
@@ -180,26 +211,30 @@ body {
     justify-content: space-between;
     align-items: center;
     padding: 10px 12px;
-    background: #222;
-    border-radius: 6px;
+    background: var(--surface-2);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
     text-decoration: none;
-    color: #ccc;
+    color: var(--text);
+    transition: background var(--transition), border var(--transition), transform var(--transition);
 }
 
 .archive-item:hover {
-    background: #2a2a2a;
+    background: #232323;
+    border-color: var(--border-strong);
+    transform: translateY(-1px);
 }
 
 .archive-item .version {
-    font-weight: 500;
-    color: #fff;
     font-size: 13px;
+    font-weight: 500;
+    color: var(--accent);
 }
 
 .archive-item .type {
     font-size: 11px;
-    color: #888;
-    background: #333;
+    color: var(--text-muted);
+    background: #2a2a2a;
     padding: 2px 6px;
-    border-radius: 4px;
+    border-radius: 999px;
 }
